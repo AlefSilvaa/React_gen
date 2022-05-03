@@ -1,0 +1,17 @@
+.texto1 {
+    font-weight: bold !important;
+}
+
+.text-decorator-none {
+    text-decoration: none;
+}
+
+.imagem {
+    background-image: url();
+    background-repeat: no-repeat;
+    width: 100vw;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    
+}
