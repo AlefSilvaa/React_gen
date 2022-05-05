@@ -1,9 +1,10 @@
 interface User {
     id: number
-    nome:  string
-    usuario: string
-    foto: string
-    token?: string | null
+    nome:  string;
+    senha: string;
+    usuario: string;
+    foto: string;
+    token?: string | null;
 
 }
 

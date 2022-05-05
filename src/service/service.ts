@@ -5,7 +5,7 @@ import axios from "axios";
 
 // Realizando conexão com API através da url do deploy
 export const api = axios.create({
-    baseURL: 'https://myblogpessoal.herokuapp.com/'
+    baseURL: 'https://blogenpessoal.herokuapp.com/'
 })
 
 // Function responsável pelo cadastro do usuário
