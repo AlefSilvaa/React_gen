@@ -2,17 +2,16 @@
     background-color: #3F51B5;
 }
 
-.titulo {
+.titulo{
     color: white !important;
-    font-weight: bold !important;
+    font-weight: bold;
 }
 
-.botao {
+.botao{
     border-color: white !important;
     background-color: #3F51B5;
-    color: white !important;
+    color: white;
 }
-
-.postagens {
+.postagens{
     background-color: white;
 }
