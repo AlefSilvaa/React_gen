@@ -5,15 +5,14 @@ import Footer from './componentes/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/home/cadastroUsuario/CadastroUsuario';
 import ListaPostagem from './componentes/postagens/listapostagem/ListaPostagem';
 import ListaTema from './componentes/temas/listatema/ListaTema';
-import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
-import CadastroTema from './components/temas/cadastroTema/CadastroTema';
-import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
-import DeletarTema from './components/temas/deletarTema/DeletarTema';
+import CadastroPost from './componentes/postagens/cadastroPost/CadastroPost';
+import CadastroTema from './componentes/temas/cadastroTema/CadastroTema';
+import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
+import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 import Login from './paginas/home/login/Login';
 import Home from './paginas/home/Home';
-
-
 import './App.css';
+
 
 function App() {
   return (

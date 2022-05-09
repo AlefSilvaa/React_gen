@@ -4,7 +4,8 @@ import {useNavigate, useParams } from 'react-router-dom'
 import './CadastroTema.css';
 import useLocalStorage from 'react-use-localstorage';
 import Tema from '../../../models/Tema';
-import { buscaId, post, put } from '../../../services/Service';
+import { buscaId, post, put } from '../service/Service';
+import {buscaId, post, put} from 'src/service/Service';
 
 
 function CadastroTema() {
