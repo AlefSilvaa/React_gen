@@ -1,9 +1,23 @@
 import react from 'react';
 import {AppBar, Toolbar, Typography, Box, Grid} from '@material-ui/core';
+import useLocalStorage from "react-use-localstorage";
 import {Link} from 'react-router-dom';
 import './Navbar.css'
 
 function Navbar (){
+
+    const[token, setToken] = useLocalStorage('token');
+    let history = useNavigate();
+
+    function goLogout(){
+        setToken("")
+        alert("Usuário deslogado")
+        history('/login')
+    }
+
+
+
+
     return (
         <>
             <AppBar  position="static" >
