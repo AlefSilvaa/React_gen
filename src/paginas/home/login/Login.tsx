@@ -8,6 +8,7 @@ import { setTokenSourceMapRange } from 'typescript';
 import { Navigation } from '@material-ui/icons';
 import { useDispatch } from 'react-redux';
 import { addToken } from "../../store/tokens/actions";
+import { toast } from 'react-toastify';
 
 function Login() {
 let history = useNavigate();
@@ -45,9 +46,30 @@ const [userLogin, setUserLogin] = useState<UserLogin>(
             const resposta = await api.post(`/usuario/logar`, userLogin)
             setToken(resposta.data.token)
 
-            alert('Usuario logado com sucesso!');
+           
+            toast.success('Usuario logado com sucesso!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+             });
          }catch(error){
             alert('Dados do usuário inconsistentes. Erro ao logar!');
+            toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+             });
+            
          }
      }
 

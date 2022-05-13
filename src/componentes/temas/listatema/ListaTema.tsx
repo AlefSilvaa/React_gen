@@ -5,6 +5,7 @@ import './ListaTema.css';
 import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import { busca } from '../../../service/Service';
+import { toast } from 'react-toastify';
 
 function ListaTema() {
 
@@ -14,7 +15,16 @@ function ListaTema() {
 
   useEffect(() => {
     if(token == "") {
-      alert("Você precisa estar logago.")
+      toast.error('Voccê precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined
+     });
       history("/login")
     }
   }, [token])
