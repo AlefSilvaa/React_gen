@@ -6,6 +6,7 @@ import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../service/Service';
+import {toast } from 'react-toastify';
 
 function CadastroPost() {
     let history = useNavigate();
@@ -15,7 +16,16 @@ function CadastroPost() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.info('Usuario deslogado', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+             });
             history("/login")
 
         }
@@ -83,14 +93,32 @@ function CadastroPost() {
                     'Authorization': token
                 }
             })
-            alert('Sua postagem foi atualizada com sucesso!');
+            toast.success('postagem atualizada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+             });
         } else {
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Sua postagem foi cadastrada com sucesso!');
+            toast.success('postagem cadastrada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+             });
         }
         back()
 

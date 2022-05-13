@@ -1,25 +1,38 @@
 import React, { useEffect } from 'react';
 import { Box, Typography, Grid, Button } from '@material-ui/core';
 import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
-import  ModalPostagem from '../../components/postagens/modalpostagem/ModalPostagem';
+import ModalPostagem from '../../componentes/postagens/modalPostagem/ModalPostagem';
 import './Home.css';
-import { useHistory } from 'react-router';
+import { useHistory, useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
 import {Link} from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Home() {
     
 
-      let history= useHistory();let token = useSelector<TokenState, TokenState["tokens"]>(
-         (state) => state.tokens
-     );
+      let history= useNavigate();
+      
+
+      const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    )
 
       useEffect(() => {
-          if (token = "") {
-              alert("você precisa estar logado")
-              history.pushState("/login")
-          }
+          if (token == "") 
+          toast.error('Você precisa estar logado', {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false, // Mover a notificação de local
+            theme: 'colored',
+            progress: undefined,
+        });
+          history("/login")
+
       }, [token])
       return (
         <>
