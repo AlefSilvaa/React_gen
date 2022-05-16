@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { buscaId, deleteId } from '../../../service/Service';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 function DeletarPostagem() {
     let history = useNavigate();
